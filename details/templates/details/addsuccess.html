@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" int
+</head>
+
+<body>
+Welcome {{ request.user.username }} !
+
+ {% if messages %}
+                                   <ul>
+                                   {% for message in messages %}
+                                   <li>{{ message }}</li>
+                                   {% endfor %}
+                                   </ul>
+{% endif %}
+
+
+</body>
+</html>

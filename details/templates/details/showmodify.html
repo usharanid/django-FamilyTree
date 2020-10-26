@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for result in results%}
+<form action="{% url 'details:actualmodify' pk=result.id %}" method="POST" class="my-login-validation" novalidate="">
+
+                                {% csrf_token %}
+
+
+   <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" value={{result.first_name}}><br><br>
+    <label for="lname">Middle Name:</label>
+      <input type="text" id="lname" name="lname" value={{result.last_name}}><br><br>
+    <label for="sname">Sur Name:</label>
+      <input type="text" id="sname" name="sname" value={{result.sur_name}}><br><br>
+    <label for="info1">Gender:</label>
+      <input type="text" id="info1" name="info1" value={{result.gender}}><br><br>
+    <label for="city">City:</label>
+
+      <input type="text" id="city" name="city" value='{{result.city}}'><br><br>
+    <label for="country">Country:</label>
+      <input type="text" id="country" name="country" value='{{result.country}}'><br><br>
+    <label for="info">RelationShip:</label>
+      <input type="text" id="info" name="info" value={{result.relationship}}><br><br>
+
+
+<div class="form-group m-0">
+<button type="submit" class="btn btn-primary btn-block">
+Submit
+</button>
+</div>
+     {% endfor %}
+</body>
+</html>

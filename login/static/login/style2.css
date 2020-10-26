@@ -1,0 +1,40 @@
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.special{
+ margin: 10px 100px 150px 100px;
+ padding: 60px 100px 150px 100px;
+ box-sizing: border-box;
+
+  background-color: #33d6ff;
+  color: rgb(255,255,204);
+}
+}
+
+body {
+ font-family: sans-serif;
+ background-color: green;
+}
+
+
+.navbar-brand
+{
+    position: relative;
+
+    width: 170px;
+    height: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+body {
+    background-color:#BBC750
+    background-size: auto;
+}

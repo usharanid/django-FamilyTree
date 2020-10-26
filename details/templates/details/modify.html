@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center {
+      margin-left: auto;
+      margin-right: auto;
+        }
+
+        .center1
+{
+  position:absolute;
+  top:0;
+  right:0;
+  float:right;
+}
+
+        table {
+  table-layout: fixed ;
+  width: 50% ;
+}
+td {
+  width: 25% ;
+}
+    </style>
+</head>
+<body>
+
+<table class="center1">
+
+<form action="{% url 'login:success' %}" method="POST" class="form-container">
+    {% csrf_token %}
+<button type="submit"  class="open-button1" ">Back</button>
+
+</form>
+
+<form action="{% url 'login:lgt' %}" method="POST" class="form-container">
+    {% csrf_token %}
+<button type="submit"  class="open-button1" ">Logout</button>
+
+</form>
+</table>
+
+    <table border="1" class="center">
+
+    <tr>
+        <th>UserName</th>
+        <th>Relationship</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for result in results%}
+    <tr>
+
+        <td>{{result.1}}</td>
+        {%if result.8 == 'uncle'%}
+        <td><a href="{% url 'details:search' %}" >{{result.8}}</a></td>
+
+        {%else%}
+        <td>{{result.8}}</td>
+        {%endif%}
+        <td><a href="{% url 'details:actualmodify' pk=result.0 %}"  >update</a></td>
+        <td><a href="{% url 'details:delete' pk=result.0 %}" >delete</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+</body>
+</html>

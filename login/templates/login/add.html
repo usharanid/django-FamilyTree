@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  background-color:#C75D50;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  top:0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+<style type="text/css">
+	.form-container {
+		margin: 0 auto;
+		width: 210px;
+
+	}
+
+	.form-container label{
+		display: inline-block;
+		text-align: right;
+		float: left;
+	}
+
+	.form-container input{
+		display: inline-block;
+		text-align: left;
+		float: right;
+	}
+
+  .form-container select{
+    display: inline-block;
+    text-align: left;
+    float: right;
+  }
+
+  .special {
+  text-align: center;
+  background-color:#50ABC7;
+  color:brown;
+  margin: 10px 100px 150px 100px;
+  padding: 60px 100px 150px 100px;
+
+</style>
+
+
+</style>
+</head>
+<body>
+<div class="special">
+<h2><strong>Add your Dear Ones:</strong></h2>
+<p>Click on the relevant button to open the login form.</p>
+
+
+<button class="open-button" onclick="openForm()"Details</button>
+
+<p>Uncle/Cousin:</p>
+
+<button class="open-button1" onclick="openForm()">Send Invitation to Join Family Tree</button>
+
+</div>
+
+<div class="form-popup" id="myForm">
+  <form action=" " class="form-container">
+    <h2><strong>Family Details</strong></h2>
+
+
+        <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="sname">Sur Name:</label>
+      <input type="text" id="sname" name="sname"><br><br>
+      <label for="info1">Gender:</label>
+      <select id="info1" name="info1">
+        <option value="Choose One">Choose one</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+
+       </select>
+       <br>
+       <br>
+
+      <label for="pic">Picture:</label>
+      <input type="file" id="myFile" name="filename"><br><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"><br><br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country"><br><br>
+      <label for="info">Relation:</label>
+      <select id="info" name="info">
+        <option value="Choose">Choose one</option>
+        <option value="Mother">Mother</option>
+        <option value="Father">Father</option>
+        <option value="Brother">Brother</option>
+        <option value="Sister">Sister</option>
+        <option value="Son">Son</option>
+        <option value="Daughter">Daughter</option>
+        <option value="Husband">Husband</option>
+        <option value="Wife">Wife</option>
+       </select>
+       <br>
+       <br>
+
+
+
+    <button type="submit" class="btn">submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+</body>
+</html>

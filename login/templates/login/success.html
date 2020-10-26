@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'login/style2.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning"    >
+
+    <!--<a class="navbar-brand" href="#">Navbar</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'login:chp' %}">Changepassword</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'login:lgt' %}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="special">
+
+
+<p><strong>Get entire Family Tree:</strong></p>
+<form class="example" action="{% url 'details:search' %}" method="POST">
+   {% csrf_token %}
+<input type="text" placeholder="Search.." name="search">
+<button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<br>
+    <p><strong>Level1 search:</strong></p>
+<form class="example" action="{% url 'details:levelsearch' %}" method="POST">
+   {% csrf_token %}
+<input type="text" placeholder="Search.." name="search1">
+<button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<br>
+<br>
+
+
+  <table style="width:100%">
+  <tr>
+   <th>
+     <form action="{% url 'details:add' %}" >
+  {% csrf_token %}
+       <p ><strong>Add personal details:</strong></p>
+   <button name="details" class="btn btn-warning" type="submit" value="details">Add Details</button>
+     </form>
+</th>
+    <form action="{% url 'details:modify' %}" >
+  {% csrf_token %}
+   <th><p ><strong>Modify personal details:</strong></p>
+   <button name="details" class="btn btn-warning" type="submit" value="details">Modify Details</button>
+   </form>
+</th>
+
+ </tr>
+  </table>
+
+
+
+</div>
+
+
+</body>
+
+</html>

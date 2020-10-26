@@ -1,0 +1,14 @@
+.DS_Store
+*.pyc
+*.py~
+.tox/
+dist/
+.cache/
+.coverage/
+django_invitations.egg-info/
+.gitchangelog.rc
+git-push.bat
+.python-version
+.coverage
+/.idea/
+
